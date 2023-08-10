@@ -7,6 +7,8 @@ import Tools from '../UI/Icon/Tools';
 import Layers from '../UI/Icon/Layers';
 import Split from '../UI/Icon/Split';
 import Settings from '../UI/Icon/Settings';
+import GitHub from '../UI/Icon/GitHub';
+import Lighttheme from '../UI/Icon/Lighttheme';
 
 
 const Header = () => {
@@ -20,7 +22,13 @@ const Header = () => {
             </div>
             <div className={classesHeader.headerRightBox}>
                 <Split className={classesHeader.splitButton} />
-                <Settings className={classesHeader.settingsButton} />
+                <div class={classesHeader.dropDown}>
+                        <Settings className={classesHeader.dropButton}/>
+                    <div class={classesHeader.dropdownContent}>
+                        <Lighttheme/>
+                        <GitHub/>
+                    </div>
+                </div>
             </div>
         </div>
     );
