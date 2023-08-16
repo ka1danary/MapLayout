@@ -1,10 +1,17 @@
 .Path
-    transition-duration: 300ms
-
-.Path:hover
-    fill: #D9D9D9
-    transition-duration: 300ms
+    transition-duration: 100ms
+    outline: 1px colid teal
+    outline-offset: 10px
+    fill: #8E8E8E
 
 .btn
     width: 40px
     height: 40px
+
+.svgIcon:hover
+    .Path
+        fill: var(--main-color-hover, #D8E2ED) 
+
+.svgIconSearch:hover 
+    .Path
+        fill: var(--main-color-hover, #2E2E2E)
