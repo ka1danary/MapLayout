@@ -12,9 +12,10 @@ function App() {
     {id : 2, title : 'Filter 2', body : 'Descroption'},
     {id : 3, title : 'Filter 3', body : 'Descroption'},
   ])
+
   return (
     <div className="App">
-      <Header/>
+      <Header filter={filter} setFilter={setFilter}/>
       
     </div>
   );

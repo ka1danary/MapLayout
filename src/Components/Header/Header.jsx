@@ -10,11 +10,10 @@ import GitHub from '../UI/Icon/GitHub';
 import Lighttheme from '../UI/Icon/Lighttheme';
 import MySearch from '../Search/MySearch';
 import MyModalSearch from '../ModalSearch/MyModalSearch';
-import MyInput from '../UI/Input/MyInput';
 import MyModalmenu from '../MyModalMenu/MyModalmenu';
 
 
-const Header = () => {
+const Header = ({filter, setFilter}) => {
 
     const [modal, setModal] = useState({menu : false, search  : false})
     
@@ -24,7 +23,7 @@ const Header = () => {
             <div className={classesHeader.HeaderBox}>
 
                 <div className={classesHeader.headerLeftBox}>
-                    <Menu className={classesHeader.menuButton} onClick={() => setModal({menu : true, search : false})} title='Меню' />
+                    <Menu className={classesHeader.menuButton} onClick={() => setModal({...modal, menu : true})} title='Меню' />
                     <MySearch/>
                 </div>
 
@@ -46,8 +45,11 @@ const Header = () => {
                 
             <MyModalmenu
                 visible={modal.menu}
-                setVisible={setModal}>
-                    <h1>Text</h1>
+                setVisible={setModal}
+                filter={filter}
+                >
+                    <h1>Доступные фильтры</h1>
+                
             </MyModalmenu>
             </div>
         </div>
