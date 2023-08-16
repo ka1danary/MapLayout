@@ -1,3 +1,3 @@
-npm i 
-cd client
-npm start
+# npm i 
+# cd client
+# npm start
