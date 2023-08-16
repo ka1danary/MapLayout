@@ -3,20 +3,21 @@ import '../src/Components/App.sass'
 
 import Header from './Components/Header/Header';
 import { useState } from 'react';
+import MyFilterItem from './Components/UI/FilterItem/MyFilterItem';
 
 
 function App() {
 
   const [filter, setFilter] = useState([
-    {id : 1, title : 'Filter 1', body : 'Descroption'},
-    {id : 2, title : 'Filter 2', body : 'Descroption'},
-    {id : 3, title : 'Filter 3', body : 'Descroption'},
+    {id : 1, title : 'Filter 1', body : 'Description'},
+    {id : 2, title : 'Filter 2', body : 'Description'},
+    {id : 3, title : 'Filter 3', body : 'Description'},
   ])
 
   return (
     <div className="App">
       <Header filter={filter} setFilter={setFilter}/>
-      
+      <MyFilterItem>Some Text</MyFilterItem>
     </div>
   );
 }
