@@ -12,7 +12,7 @@ const MyModalmenu = ({ children, visible, setVisible, filter}) => {
     return (
         <div className={rootClasses.join(' ')}>
             <div className={modalMenu.contentModal}>
-                <Delete/>
+                
                 {children}
                 {filter.map( el => 
                     <div>{el.id}. {el.title}</div>

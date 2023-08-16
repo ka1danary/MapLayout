@@ -10,12 +10,20 @@ import GitHub from '../UI/Icon/GitHub';
 import Lighttheme from '../UI/Icon/Lighttheme';
 import MySearch from '../Search/MySearch';
 import MyModalSearch from '../ModalSearch/MyModalSearch';
+import MyInput from '../UI/Input/MyInput';
 import MyModalmenu from '../MyModalMenu/MyModalmenu';
 
 
 const Header = ({filter, setFilter}) => {
 
     const [modal, setModal] = useState({menu : false, search  : false})
+
+    const openWindow = () => {
+        modal.menu ?
+        setModal({...modal, menu :false})
+        : setModal({...modal, menu : true})
+    }
+        
     
     return (
         <div className={classesHeader.headerMain}>
@@ -23,7 +31,7 @@ const Header = ({filter, setFilter}) => {
             <div className={classesHeader.HeaderBox}>
 
                 <div className={classesHeader.headerLeftBox}>
-                    <Menu className={classesHeader.menuButton} onClick={() => setModal({...modal, menu : true})} title='Меню' />
+                    <Menu className={classesHeader.menuButton} onClick={openWindow} title='Меню' />
                     <MySearch/>
                 </div>
 
