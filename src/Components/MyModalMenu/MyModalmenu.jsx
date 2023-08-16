@@ -1,6 +1,5 @@
 import React from 'react';
 import modalMenu from './MyModal.module.sass'
-import Delete from '../UI/Icon/Delete';
 
 const MyModalmenu = ({ children, visible, setVisible, filter}) => {
 
@@ -11,8 +10,7 @@ const MyModalmenu = ({ children, visible, setVisible, filter}) => {
     }
     return (
         <div className={rootClasses.join(' ')}>
-            <div className={modalMenu.contentModal}>
-                
+            <div className={modalMenu.contentModal} onClick={(e) => e.stopPropagation()}>
                 {children}
                 {filter.map( el => 
                     <div>{el.id}. {el.title}</div>

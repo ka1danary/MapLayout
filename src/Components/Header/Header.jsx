@@ -12,17 +12,26 @@ import MySearch from '../Search/MySearch';
 import MyModalSearch from '../ModalSearch/MyModalSearch';
 import MyInput from '../UI/Input/MyInput';
 import MyModalmenu from '../MyModalMenu/MyModalmenu';
+import SettingsDropMenu from '../SettingsDropMenu/SettingsDropMenu';
 
 
 const Header = ({filter, setFilter}) => {
 
-    const [modal, setModal] = useState({menu : false, search  : false})
+    const [modal, setModal] = useState({menu : false, search  : false, settings : false})
 
-    const openWindow = () => {
+    const openMenu = () => {
         modal.menu ?
         setModal({...modal, menu :false})
         : setModal({...modal, menu : true})
     }
+
+    const openSettings = () => {
+        modal.settings ?
+        setModal({...modal, settings :false})
+        : setModal({...modal, settings : true})
+    }
+
+
         
     
     return (
@@ -31,7 +40,7 @@ const Header = ({filter, setFilter}) => {
             <div className={classesHeader.HeaderBox}>
 
                 <div className={classesHeader.headerLeftBox}>
-                    <Menu className={classesHeader.menuButton} onClick={openWindow} title='Меню' />
+                    <Menu className={classesHeader.menuButton} onClick={openMenu} title='Меню' />
                     <MySearch/>
                 </div>
 
@@ -40,11 +49,7 @@ const Header = ({filter, setFilter}) => {
                     <Tools className={classesHeader.toolsButton} title='Инструменты' />
                     <Split className={classesHeader.splitButton} title='Разделить' />
                     <div class={classesHeader.dropDown}>
-                        <Settings className={classesHeader.dropButton} title='Настройки' />
-                        <div class={classesHeader.dropdownContent}>
-                            <Lighttheme />
-                            <GitHub />
-                        </div>
+                        <Settings className={classesHeader.dropButton} title='Настройки' onClick={openSettings}/>
                     </div>
                 </div>
             </div>
@@ -59,6 +64,10 @@ const Header = ({filter, setFilter}) => {
                     <h1>Доступные фильтры</h1>
                 
             </MyModalmenu>
+            <SettingsDropMenu
+                visible={modal.settings}
+                setVisible={setModal}
+            ></SettingsDropMenu>
             </div>
         </div>
 
