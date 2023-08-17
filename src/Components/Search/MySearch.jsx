@@ -7,16 +7,21 @@ import serchModule from './MySearch.module.sass'
 
 const MySearch = (props) => {
 
+    const [stateInput, setStateInput] = useState('')
+
     return (
 
         <div {...props} className={serchModule.boxContainer} >
             <MyInput 
                 placeholder='Найти фильтр'
                 title='Поиск'
+                className={serchModule.searchInput}
+                value={stateInput}
+                onChange={ e => setStateInput(e.target.value)}
             />
             <div className={serchModule.boxRightContainer}>
                 <SearchIIcon className={serchModule.searchButton} title='Искать'/>
-                <Delete className={serchModule.searchButton} title='Очистить'/>
+                <Delete className={serchModule.searchButton} title='Очистить' onClick={() => setStateInput('')}/>
             </div>
         </div>
     );

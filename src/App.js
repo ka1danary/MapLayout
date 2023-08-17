@@ -3,7 +3,8 @@ import '../src/Components/App.sass'
 
 import Header from './Components/Header/Header';
 import { useState } from 'react';
-import MyFilterItem from './Components/UI/FilterItem/MyFilterItem';
+import MyFilterItem from './Components/UI/FilterItemCastom/MyFilterItem';
+import MyCheckbox from './Components/UI/Chekbox/CheckboxScroll/MyCheckbox';
 
 
 function App() {
