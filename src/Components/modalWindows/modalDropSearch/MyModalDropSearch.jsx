@@ -2,7 +2,7 @@ import React from 'react';
 
 import modalClasses from './MyModalDropSearch.module.sass'
 
-const MyModalSearch = ({ children, visible, setVisible }) => {
+const MyModalSearch = ({ children, visible, setVisible, filter }) => {
 
     const rootClasses = [modalClasses.myModal]
 
@@ -11,13 +11,16 @@ const MyModalSearch = ({ children, visible, setVisible }) => {
     }
 
     return (
-        <div className={rootClasses.join(' ')}
-            >
+        <div className={rootClasses.join(' ')}>
             <div
-                className={modalClasses.myModalContent}
-                onClick={(e) => e.stopPropagation()}>
+                className={modalClasses.myModalContent}>
                 {children}
             </div>
+            <div className={modalClasses.filterList}>
+                    {filter.map(el =>
+                        <div className={modalClasses.elementFilter}>{el.title}</div>
+                    )}
+                </div>
         </div>
     );
 };

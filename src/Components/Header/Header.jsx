@@ -38,6 +38,10 @@ const Header = ({ filter, setFilter }) => {
         console.log(modal.search)
     }
 
+    const deleteSearch = () => {
+        setModal({...modal, search : false})
+    }
+
 
 
     return (
@@ -50,6 +54,7 @@ const Header = ({ filter, setFilter }) => {
                     />
                     <MySearch
                         open={openSearch}
+                        deleteF={deleteSearch}
                     />
                 </div>
                 <div className={classesHeader.headerRightBox}>
@@ -83,7 +88,10 @@ const Header = ({ filter, setFilter }) => {
                 <MyModalSearch
                     visible={modal.search}
                     setVisible={setModal}
-                />
+                    filter={filter}
+                >
+                    <div>Результаты</div>
+                </MyModalSearch>
                 <SettingsDropMenu
                     visible={modal.settings}
                     setVisible={setModal}>

@@ -6,13 +6,13 @@ import MyInput from '../UI/inputs/MyInput.jsx';
 import SearchIIcon from '../UI/buttons/SearchIIcon';
 import Delete from '../UI/buttons/Delete';
 
-const MySearch = ({open, ...props}) => {
+const MySearch = ({open, deleteF,  ...props}) => {
 
     const [stateInput, setStateInput] = useState('')
 
     const deleteFuction = () => {
         setStateInput('')
-        open()
+        deleteF()
     }
     return (
         <div>
