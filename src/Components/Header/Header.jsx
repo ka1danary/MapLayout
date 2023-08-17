@@ -35,7 +35,10 @@ const Header = ({ filter, setFilter }) => {
         modal.search 
             ? setModal({ ...modal, search: false })
             : setModal({ ...modal, search: true })
+        console.log(modal.search)
     }
+
+
 
     return (
         <div className={classesHeader.headerMain}>
@@ -46,7 +49,7 @@ const Header = ({ filter, setFilter }) => {
                         onClick={openMenu} title='Меню' 
                     />
                     <MySearch
-                        onClick={openSearch}
+                        open={openSearch}
                     />
                 </div>
                 <div className={classesHeader.headerRightBox}>

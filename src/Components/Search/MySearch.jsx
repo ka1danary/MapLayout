@@ -6,10 +6,14 @@ import MyInput from '../UI/inputs/MyInput.jsx';
 import SearchIIcon from '../UI/buttons/SearchIIcon';
 import Delete from '../UI/buttons/Delete';
 
-const MySearch = (props) => {
+const MySearch = ({open, ...props}) => {
 
     const [stateInput, setStateInput] = useState('')
 
+    const deleteFuction = () => {
+        setStateInput('')
+        open()
+    }
     return (
         <div>
             <div {...props} className={serchModule.boxContainer} >
@@ -19,10 +23,14 @@ const MySearch = (props) => {
                 className={serchModule.searchInput}
                 value={stateInput}
                 onChange={ e => setStateInput(e.target.value)}
+                onClick={open}
             />
             <div className={serchModule.boxRightContainer}>
                 <SearchIIcon className={serchModule.searchButton} title='Искать'/>
-                <Delete className={serchModule.searchButton} title='Очистить' onClick={() => setStateInput('')}/>
+                <Delete className={serchModule.searchButton} 
+                title='Очистить' 
+                onClick={deleteFuction}
+                />
             </div>
         </div>
 
