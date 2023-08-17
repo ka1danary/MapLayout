@@ -1,8 +1,9 @@
 import React from 'react';
-import Lighttheme from '../UI/Icon/Lighttheme';
-import GitHub from '../UI/Icon/GitHub';
 
-import settingsClasses from './SettingsDropMenu.module.sass'
+import settingsClasses from './MyModalDropSettings.module.sass'
+
+import Lighttheme from '../../UI/buttons/Lighttheme';
+import GitHub from '../../UI/buttons/GitHub';
 
 const SettingsDropMenu = ({ children, visible, setisible }) => {
 
@@ -11,6 +12,7 @@ const SettingsDropMenu = ({ children, visible, setisible }) => {
     if (visible) {
         rootClasses.push(settingsClasses.active)
     }
+    
     return (
         <div className={settingsClasses.BoxSettings}>
             <div className={rootClasses.join(' ')}>
@@ -20,7 +22,6 @@ const SettingsDropMenu = ({ children, visible, setisible }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 

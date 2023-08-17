@@ -3,14 +3,15 @@ import { useState } from 'react';
 
 import classesHeader from './Header.module.sass'
 
-import Menu from '../UI/Icon/Menu';
-import Tools from '../UI/Icon/Tools';
-import Layers from '../UI/Icon/Layers';
-import Split from '../UI/Icon/Split';
-import Settings from '../UI/Icon/Settings';
-import MySearch from '../Search/MySearch';
-import MyModalmenu from '../MyModalMenu/MyModalmenu';
-import SettingsDropMenu from '../SettingsDropMenu/SettingsDropMenu';
+import Menu from '../UI/buttons/Menu';
+import Tools from '../UI/buttons/Tools';
+import Layers from '../UI/buttons/Layers';
+import Split from '../UI/buttons/Split';
+import Settings from '../UI/buttons/Settings';
+import MySearch from '../search/MySearch';
+import MyModalmenu from '../modalWindows/modalDropMenu/MyModalDropMenu';
+import SettingsDropMenu from '../modalWindows/modalDropSettings/MyModalDropSettings';
+import MyModalSearch from '../modalWindows/modalDropSearch/MyModalDropSearch';
 
 
 const Header = ({ filter, setFilter }) => {
@@ -30,6 +31,12 @@ const Header = ({ filter, setFilter }) => {
             : setModal({ ...modal, settings: true })
     }
 
+    const openSearch = () => {
+        modal.search 
+            ? setModal({ ...modal, search: false })
+            : setModal({ ...modal, search: true })
+    }
+
     return (
         <div className={classesHeader.headerMain}>
             <div className={classesHeader.HeaderBox}>
@@ -38,7 +45,9 @@ const Header = ({ filter, setFilter }) => {
                         className={classesHeader.menuButton} 
                         onClick={openMenu} title='Меню' 
                     />
-                    <MySearch/>
+                    <MySearch
+                        onClick={openSearch}
+                    />
                 </div>
                 <div className={classesHeader.headerRightBox}>
                     <Layers 
@@ -65,12 +74,18 @@ const Header = ({ filter, setFilter }) => {
                     visible={modal.menu}
                     setVisible={setModal}
                     filter={filter}>
-                    <h1>Доступные фильтры</h1>
+                    <div>Доступные фильтры</div>
                 </MyModalmenu>
+
+                <MyModalSearch
+                    visible={modal.search}
+                    setVisible={setModal}
+                />
                 <SettingsDropMenu
                     visible={modal.settings}
                     setVisible={setModal}>
                 </SettingsDropMenu>
+
             </div>
         </div>
     );

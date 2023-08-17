@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import moduleFilteritem from './MyFilterItem.module.sass'
+
+import moduleFilteritem from './myCheckboxScroll.module.sass'
+
 //import MyCheckbox from '../Checkbox/MyCheckbox';
 
 const MyFilterItem = ({children, ...props}) => {

@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import MyInput from '../UI/Input/MyInput.jsx';
-import SearchIIcon from '../UI/Icon/SearchIIcon';
-import Delete from '../UI/Icon/Delete';
+
 import serchModule from './MySearch.module.sass'
 
+import MyInput from '../UI/inputs/MyInput.jsx';
+import SearchIIcon from '../UI/buttons/SearchIIcon';
+import Delete from '../UI/buttons/Delete';
 
 const MySearch = (props) => {
 
     const [stateInput, setStateInput] = useState('')
 
     return (
-
-        <div {...props} className={serchModule.boxContainer} >
+        <div>
+            <div {...props} className={serchModule.boxContainer} >
             <MyInput 
                 placeholder='Найти фильтр'
                 title='Поиск'
@@ -24,6 +25,9 @@ const MySearch = (props) => {
                 <Delete className={serchModule.searchButton} title='Очистить' onClick={() => setStateInput('')}/>
             </div>
         </div>
+
+        </div>
+        
     );
 };
 
