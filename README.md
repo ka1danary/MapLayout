@@ -1,17 +1,17 @@
 ### Установка
-npm i 
+`npm i `
 ### Запуск
-`cd client
+`cd client`
 
-npm start`
+`npm start`
 
 ### Имена 
 Файлы - file
 
-Переменные - descriptionName 
+`Переменные` - descriptionName 
 
-Компоненты - MyNameDescription
+`Компоненты` - MyNameDescription
 
-Функции - descriptionFunction
+`Функции` - descriptionFunction
 
-Константы - CONST
+`Константы` - CONST
