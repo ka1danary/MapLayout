@@ -1,3 +1,6 @@
-# npm i 
-# cd client
-# npm start
+### Установка
+npm i 
+### Запуск
+cd client
+
+npm start
