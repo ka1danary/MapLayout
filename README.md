@@ -1,6 +1,17 @@
 ### Установка
 npm i 
 ### Запуск
-``cd client
+`cd client
 
-npm start``
+npm start`
+
+### Имена 
+Файлы - file
+
+Переменные - descriptionName 
+
+Компоненты - MyNameDescription
+
+Функции - descriptionFunction
+
+Константы - CONST
