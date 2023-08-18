@@ -33,7 +33,7 @@ const Header = ({ filter, setFilter }) => {
 
     const openSearch = () => {
         modal.search 
-            ? setModal({ ...modal, search: false })
+            ? setModal({ ...modal, search: true })
             : setModal({ ...modal, search: true })
         console.log(modal.search)
     }
@@ -41,8 +41,6 @@ const Header = ({ filter, setFilter }) => {
     const deleteSearch = () => {
         setModal({...modal, search : false})
     }
-
-
 
     return (
         <div className={classesHeader.headerMain}>
@@ -84,19 +82,16 @@ const Header = ({ filter, setFilter }) => {
                     filter={filter}>
                     <div>Доступные фильтры</div>
                 </MyModalmenu>
-
                 <MyModalSearch
                     visible={modal.search}
                     setVisible={setModal}
                     filter={filter}
-                >
-                    <div>Результаты</div>
+                > 
                 </MyModalSearch>
                 <SettingsDropMenu
                     visible={modal.settings}
                     setVisible={setModal}>
                 </SettingsDropMenu>
-
             </div>
         </div>
     );
