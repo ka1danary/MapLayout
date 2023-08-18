@@ -6,7 +6,7 @@ import MyInput from '../UI/inputs/MyInput.jsx';
 import SearchIIcon from '../UI/buttons/SearchIIcon';
 import Delete from '../UI/buttons/Delete';
 
-const MySearch = ({open, deleteF,  ...props}) => {
+const MySearch = ({open, deleteF, ...props}) => {
 
     const [stateInput, setStateInput] = useState('')
 
@@ -14,6 +14,7 @@ const MySearch = ({open, deleteF,  ...props}) => {
         setStateInput('')
         deleteF()
     }
+
     return (
         <div>
             <div {...props} className={serchModule.boxContainer} >

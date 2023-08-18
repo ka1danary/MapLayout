@@ -40,7 +40,7 @@ const Header = ({ filter, setFilter }) => {
 
     const deleteSearch = () => {
         setModal({...modal, search : false})
-    }
+    } 
 
     return (
         <div className={classesHeader.headerMain}>
@@ -86,6 +86,7 @@ const Header = ({ filter, setFilter }) => {
                     visible={modal.search}
                     setVisible={setModal}
                     filter={filter}
+                    
                 > 
                 </MyModalSearch>
                 <SettingsDropMenu

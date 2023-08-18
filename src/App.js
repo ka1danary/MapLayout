@@ -3,7 +3,8 @@ import { useState } from 'react';
 import '../src/Components/reset.css'
 import '../src/Components/App.sass'
 
-import Header from './Components/header/Header';
+import Header from './Components/header/Header.jsx';
+import MyModalTools from './Components/modalWindows/modalTools/MyModalTools';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header filter={filter} setFilter={setFilter} />
-    
+      <MyModalTools/>
     </div>
   );
 }
