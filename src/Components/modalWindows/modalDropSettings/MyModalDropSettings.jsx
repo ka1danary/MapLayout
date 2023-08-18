@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+    CSSTransition,
+    TransitionGroup
+} from 'react-transition-group';
 
 import settingsClasses from './MyModalDropSettings.module.sass'
 
@@ -12,16 +16,24 @@ const SettingsDropMenu = ({ children, visible, setisible }) => {
     if (visible) {
         rootClasses.push(settingsClasses.active)
     }
-    
+
     return (
-        <div className={settingsClasses.BoxSettings}>
-            <div className={rootClasses.join(' ')}>
-                <div className={settingsClasses.settingsContent}>
-                    <Lighttheme />
-                    <GitHub />
+        <TransitionGroup>
+            <CSSTransition
+                key={Date.now()}
+                timeout={500}
+                classNames={settingsClasses.menu}
+            >
+            <div className={settingsClasses.BoxSettings}>
+                <div className={rootClasses.join(' ')}>
+                    <div className={settingsClasses.settingsContent}>
+                        <Lighttheme />
+                        <GitHub />
+                    </div>
                 </div>
             </div>
-        </div>
+            </CSSTransition>
+        </TransitionGroup>
     );
 };
 

@@ -11,9 +11,10 @@ const MyModalSearch = ({ children, visible, setVisible, filter }) => {
     }
 
     return (
-        <div className={rootClasses.join(' ')}>
+        <div className={rootClasses.join(' ')} onClick={(e => e.stopPropagation())}>
             <div
-                className={modalClasses.myModalContent}>
+                className={modalClasses.myModalContent}
+                >
                 {children}
             </div>
             <div className={modalClasses.filterList}>
