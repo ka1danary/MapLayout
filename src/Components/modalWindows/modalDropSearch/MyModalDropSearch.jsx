@@ -22,6 +22,7 @@ const MyModalSearch = ({ children, visible, setVisible, filter }) => {
                         <div className={modalClasses.elementFilter}>{el.title}</div>
                     )}
                 </div>
+                
         </div>
     );
 };

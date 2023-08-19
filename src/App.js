@@ -4,7 +4,7 @@ import '../src/Components/reset.css'
 import '../src/Components/App.sass'
 
 import Header from './Components/header/Header.jsx';
-import MyModalTools from './Components/modalWindows/modalTools/MyModalTools';
+
 
 
 function App() {
@@ -13,13 +13,40 @@ function App() {
     { id: 1, title: 'Фильтр 1', body: 'Description' },
     { id: 2, title: 'Фильтр 2', body: 'Description' },
     { id: 3, title: 'Фильтр 3', body: 'Description' },
+    { id: 4, title: 'Фильтр 3', body: 'Description' },
+    { id: 5, title: 'Фильтр 3', body: 'Description' },
+    { id: 6, title: 'Фильтр 3', body: 'Description' },
+    { id: 1, title: 'Фильтр 1', body: 'Description' },
+    { id: 2, title: 'Фильтр 2', body: 'Description' },
+    { id: 3, title: 'Фильтр 3', body: 'Description' },
+    { id: 4, title: 'Фильтр 3', body: 'Description' },
+    { id: 5, title: 'Фильтр 3', body: 'Description' },
+    { id: 6, title: 'Фильтр 3', body: 'Description' },
+    { id: 1, title: 'Фильтр 1', body: 'Description' },
+    { id: 2, title: 'Фильтр 2', body: 'Description' },
+    { id: 3, title: 'Фильтр 3', body: 'Description' },
+    { id: 4, title: 'Фильтр 3', body: 'Description' },
+    { id: 5, title: 'Фильтр 3', body: 'Description' },
+    { id: 6, title: 'Фильтр 3', body: 'Description' },
+    { id: 1, title: 'Фильтр 1', body: 'Description' },
+    { id: 2, title: 'Фильтр 2', body: 'Description' },
+    { id: 3, title: 'Фильтр 3', body: 'Description' },
+    { id: 4, title: 'Фильтр 3', body: 'Description' },
+    { id: 5, title: 'Фильтр 3', body: 'Description' },
+    { id: 6, title: 'Фильтр 3', body: 'Description' },
+    { id: 1, title: 'Фильтр 1', body: 'Description' },
+    { id: 2, title: 'Фильтр 2', body: 'Description' },
+    { id: 3, title: 'Фильтр 3', body: 'Description' },
+    { id: 4, title: 'Фильтр 3', body: 'Description' },
+    { id: 5, title: 'Фильтр 3', body: 'Description' },
+    { id: 6, title: 'Фильтр 3', body: 'Description' },
     
   ])
 
   return (
     <div className="App">
       <Header filter={filter} setFilter={setFilter} />
-      <MyModalTools>Some text</MyModalTools>
+      
     </div>
   );
 }

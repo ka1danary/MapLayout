@@ -1,49 +1,60 @@
-.myModalMenu
-    display: none
-    justify-content: left
-    background-color: #2E2E2E
-    height: 100%
-    user-select: none
-    resize: horizontal
-    overflow: auto
-    max-width: 1000px
-    min-width: 270px
-    min-height: 965px
-    border-top : 1px solid #3E3E3E
-
 .myModalMenu::-webkit-scrollbar-thumb
     background-color: #D9D9D9
     border-radius: 20px
     border: none
 
+.myModalMenu
+    display: none
+    justify-content: left
+    overflow: auto
+    resize: horizontal
+    user-select: none
+    background-color: #2E2E2E
+    min-width: 240px
+    max-width: 1000px
+    min-height: 965px
+    height: 100%
+    border-top: 1px solid #3E3E3E
+
 .myModalMenu.active
-    display : block
-    justify-content: center
-    
+    display: block
 
 .contentModal
-    background: transparent
     display: block
-    color : #D9D9D9
+    color: #D9D9D9
     font-family: Inter
     font-size: 16px
     font-style: normal
     font-weight: 500
     line-height: normal
-    margin-top : 20px
-    
-    
-.titleMenu
-    font-size: 20px
-    margin-left : 20px
+    margin-top: 20px
 
+.toolsContent
+    border-bottom: 1px solid #3E3E3E
+
+.tools
+    margin: 10px
+    padding-bottom: 5px
+    color: #8D8D8D
+    h1
+        font-size: 16px
+        margin-bottom: 10px
+        color: #e0e0e0
+
+.titleMenu
+    font-size: 16px
+    margin-left: 10px
+    margin-top: 20px
+    color: #e0e0e0
+
+.filtersListContent
+    border-bottom: 1px solid #3E3E3E
+    padding-bottom: 20px
 
 .filtersList
     margin-top: 20px
-    margin-left : 20px
-
+    margin-left: 20px
     .filtersListItem
-        border-bottom: 1px solid #3E3E3E
-        padding-bottom: 5px
-        padding-top : 5px
-        color : #8D8D8D
+        padding-bottom: 7px
+        padding-top: 5px
+        color: #8D8D8D

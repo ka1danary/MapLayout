@@ -5,6 +5,7 @@ import serchModule from './MySearch.module.sass'
 import MyInput from '../UI/inputs/MyInput.jsx';
 import SearchIIcon from '../UI/buttons/SearchIIcon';
 import Delete from '../UI/buttons/Delete';
+import MyModalSearch from '../modalWindows/modalDropSearch/MyModalDropSearch';
 
 const MySearch = ({open, deleteF, ...props}) => {
 
@@ -32,6 +33,10 @@ const MySearch = ({open, deleteF, ...props}) => {
                 title='Очистить' 
                 onClick={deleteFuction}
                 />
+            </div>
+            <div>
+                
+                 
             </div>
         </div>
 

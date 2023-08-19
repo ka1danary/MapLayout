@@ -4,7 +4,6 @@ import { useState } from 'react';
 import classesHeader from './Header.module.sass'
 
 import Menu from '../UI/buttons/Menu';
-import Tools from '../UI/buttons/Tools';
 import Layers from '../UI/buttons/Layers';
 import Split from '../UI/buttons/Split';
 import Settings from '../UI/buttons/Settings';
@@ -17,7 +16,6 @@ import MyModalSearch from '../modalWindows/modalDropSearch/MyModalDropSearch';
 const Header = ({ filter, setFilter }) => {
 
     const [modal, setModal] = useState({ menu: false, search: false, settings: false })
-
 
     const openMenu = () => {
         modal.menu ?
@@ -60,10 +58,6 @@ const Header = ({ filter, setFilter }) => {
                         className={classesHeader.layersButton} 
                         title='Слои' 
                     />
-                    <Tools 
-                        className={classesHeader.toolsButton} 
-                        title='Инструменты' 
-                    />
                     <Split 
                         className={classesHeader.splitButton} 
                         title='Разделить' 
@@ -86,7 +80,6 @@ const Header = ({ filter, setFilter }) => {
                     visible={modal.search}
                     setVisible={setModal}
                     filter={filter}
-                    
                 > 
                 </MyModalSearch>
                 <SettingsDropMenu
