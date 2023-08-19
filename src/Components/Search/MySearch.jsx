@@ -31,18 +31,16 @@ const MySearch = ({ filter, ...props }) => {
                     <SearchIIcon className={serchModule.searchButton} title='Искать' />
                     <Delete className={serchModule.searchButton}
                         title='Очистить'
-                        onClick={() => setStateSearch({state: '' , drop : false})}
+                        onClick={() => setStateSearch({ state: '', drop: false })}
                     />
                 </div>
                 <div className={serchModule.outline}>
-                    <MyModalSearch 
+                    <MyModalSearch
                         visible={stateSearch.drop}
-                    filter={filter} />
+                        filter={filter} />
                 </div>
             </div>
-
         </div>
-
     );
 };
 

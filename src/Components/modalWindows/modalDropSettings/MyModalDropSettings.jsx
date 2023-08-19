@@ -14,16 +14,16 @@ const SettingsDropMenu = ({ children, visible, setisible }) => {
     }
 
     return (
-        
-            <div className={settingsClasses.BoxSettings}>
-                <div className={rootClasses.join(' ')}>
-                    <div className={settingsClasses.settingsContent}>
-                        <Lighttheme />
-                        <GitHub />
-                    </div>
+        <div className={settingsClasses.BoxSettings}>
+            <div className={rootClasses.join(' ')}>
+                <div className={settingsClasses.settingsContent}>
+                    <Lighttheme />
+                    <GitHub />
+                    {children}
                 </div>
             </div>
-            
+        </div>
+
     );
 };
 

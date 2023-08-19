@@ -4,8 +4,7 @@ import '../src/Components/reset.css'
 import '../src/Components/App.sass'
 
 import Header from './Components/header/Header.jsx';
-
-
+import MyDropLayers from './Components/modalWindows/modalDropLayers/MyDropLayers';
 
 function App() {
 
@@ -20,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header filter={filter} setFilter={setFilter} />
-      
+      <MyDropLayers>Some text</MyDropLayers>
     </div>
   );
 }

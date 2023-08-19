@@ -5,7 +5,7 @@ import moduleFilteritem from './myCheckboxScroll.module.sass'
 
 //import MyCheckbox from '../Checkbox/MyCheckbox';
 
-const MyFilterItem = ({children, ...props}) => {
+const MyFilterItem = ({ children, ...props }) => {
 
     const [check, setCheck] = useState(false)
 
@@ -15,15 +15,16 @@ const MyFilterItem = ({children, ...props}) => {
                 <label
                     value={check}
                     disabled={false}
-                    className={moduleFilteritem.checkbox}
-                >
-                <input 
-                type='checkbox'
-                value={check} 
-                onChange={e => setCheck(e.target.value)}
-                className={moduleFilteritem.checkbox}
-                />
-                    <div className={moduleFilteritem.checkBoxText}>{children}</div>
+                    className={moduleFilteritem.checkbox}>
+                    <input
+                        type='checkbox'
+                        value={check}
+                        onChange={e => setCheck(e.target.value)}
+                        className={moduleFilteritem.checkbox}
+                    />
+                    <div className={moduleFilteritem.checkBoxText}>
+                        {children}
+                    </div>
                 </label>
             </div>
         </div>
