@@ -2,10 +2,10 @@ import React from 'react';
 
 import modalTools from './MyModalTools.module.sass'
 
-const MyModalTools = () => {
+const MyModalTools = ({children, visible, setVisible,...props}) => {
     return (
         <div>
-            
+            {children}
         </div>
     );
 };
