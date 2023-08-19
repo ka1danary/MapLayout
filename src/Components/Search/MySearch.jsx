@@ -7,41 +7,42 @@ import SearchIIcon from '../UI/buttons/SearchIIcon';
 import Delete from '../UI/buttons/Delete';
 import MyModalSearch from '../modalWindows/modalDropSearch/MyModalDropSearch';
 
-const MySearch = ({open, deleteF, ...props}) => {
+const MySearch = ({ filter, ...props }) => {
 
-    const [stateInput, setStateInput] = useState('')
+    const [stateSearch, setStateSearch] = useState({ state: '', drop: false })
 
-    const deleteFuction = () => {
-        setStateInput('')
-        deleteF()
+    const openAndCloseSearch = () => {
+        setStateSearch({ ...stateSearch, drop: !(stateSearch.drop) })
     }
+
 
     return (
         <div>
             <div {...props} className={serchModule.boxContainer} >
-            <MyInput 
-                placeholder='Найти фильтр'
-                title='Поиск'
-                className={serchModule.searchInput}
-                value={stateInput}
-                onChange={ e => setStateInput(e.target.value)}
-                onClick={open}
-            />
-            <div className={serchModule.boxRightContainer}>
-                <SearchIIcon className={serchModule.searchButton} title='Искать'/>
-                <Delete className={serchModule.searchButton} 
-                title='Очистить' 
-                onClick={deleteFuction}
+                <MyInput
+                    placeholder='Найти фильтр'
+                    title='Поиск'
+                    className={serchModule.searchInput}
+                    value={stateSearch.state}
+                    onChange={e => setStateSearch({ ...stateSearch, state: e.target.value })}
+                    onClick={openAndCloseSearch}
                 />
+                <div className={serchModule.boxRightContainer}>
+                    <SearchIIcon className={serchModule.searchButton} title='Искать' />
+                    <Delete className={serchModule.searchButton}
+                        title='Очистить'
+                        onClick={() => setStateSearch({state: '' , drop : false})}
+                    />
+                </div>
+                <div className={serchModule.outline}>
+                    <MyModalSearch 
+                        visible={stateSearch.drop}
+                    filter={filter} />
+                </div>
             </div>
-            <div>
-                
-                 
-            </div>
-        </div>
 
         </div>
-        
+
     );
 };
 

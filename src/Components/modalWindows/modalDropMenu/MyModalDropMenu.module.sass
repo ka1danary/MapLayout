@@ -1,23 +1,30 @@
 .myModalMenu::-webkit-scrollbar-thumb
-    background-color: #D9D9D9
+    background: #2E2E2E
     border-radius: 20px
     border: none
+
+.myModalMenu::-webkit-scrollbar
+    width: 10px
+
+.myModalMenu::-webkit-scrollbar-track
+    background-color: #2E2E2E
+
 
 .myModalMenu
     display: none
     justify-content: left
-    overflow: auto
-    resize: horizontal
     user-select: none
     background-color: #2E2E2E
     min-width: 240px
     max-width: 1000px
     min-height: 965px
-    height: 100%
+    max-height: 965px
     border-top: 1px solid #3E3E3E
-
+    resize: horizontal
+    overflow: hidden
+    
 .myModalMenu.active
-    display: block
+    display: flex
 
 .contentModal
     display: block
@@ -28,9 +35,11 @@
     font-weight: 500
     line-height: normal
     margin-top: 20px
+    overflow-y: scroll
 
 .toolsContent
     border-bottom: 1px solid #3E3E3E
+    
 
 .tools
     margin: 10px
@@ -46,11 +55,10 @@
     margin-left: 10px
     margin-top: 20px
     color: #e0e0e0
+    
 
 .filtersListContent
-    border-bottom: 1px solid #3E3E3E
-    padding-bottom: 20px
-
+    
 .filtersList
     margin-top: 20px
     margin-left: 20px

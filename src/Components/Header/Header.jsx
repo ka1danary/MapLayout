@@ -10,12 +10,10 @@ import Settings from '../UI/buttons/Settings';
 import MySearch from '../search/MySearch';
 import MyModalmenu from '../modalWindows/modalDropMenu/MyModalDropMenu';
 import SettingsDropMenu from '../modalWindows/modalDropSettings/MyModalDropSettings';
-import MyModalSearch from '../modalWindows/modalDropSearch/MyModalDropSearch';
-
 
 const Header = ({ filter, setFilter }) => {
 
-    const [modal, setModal] = useState({ menu: false, search: false, settings: false })
+    const [modal, setModal] = useState({ menu: false, settings: false})
 
     const openMenu = () => {
         modal.menu ?
@@ -29,16 +27,6 @@ const Header = ({ filter, setFilter }) => {
             : setModal({ ...modal, settings: true })
     }
 
-    const openSearch = () => {
-        modal.search 
-            ? setModal({ ...modal, search: true })
-            : setModal({ ...modal, search: true })
-        console.log(modal.search)
-    }
-
-    const deleteSearch = () => {
-        setModal({...modal, search : false})
-    } 
 
     return (
         <div className={classesHeader.headerMain}>
@@ -49,8 +37,7 @@ const Header = ({ filter, setFilter }) => {
                         onClick={openMenu} title='Меню' 
                     />
                     <MySearch
-                        open={openSearch}
-                        deleteF={deleteSearch}
+                        filter={filter}
                     />
                 </div>
                 <div className={classesHeader.headerRightBox}>
@@ -76,12 +63,6 @@ const Header = ({ filter, setFilter }) => {
                     filter={filter}>
                     <div>Доступные фильтры</div>
                 </MyModalmenu>
-                <MyModalSearch
-                    visible={modal.search}
-                    setVisible={setModal}
-                    filter={filter}
-                > 
-                </MyModalSearch>
                 <SettingsDropMenu
                     visible={modal.settings}
                     setVisible={setModal}>
