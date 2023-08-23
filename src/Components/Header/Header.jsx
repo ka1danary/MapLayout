@@ -27,7 +27,6 @@ const Header = ({ filter, setFilter }) => {
             : setModal({ ...modal, settings: true })
     }
 
-
     return (
         <div className={classesHeader.headerMain}>
             <div className={classesHeader.HeaderBox}>
